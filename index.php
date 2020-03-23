@@ -62,7 +62,13 @@
 		array(
 			"link" => "item4 link",
 			"title" => "item4", 
-			"children" => array()
+			"children" => array(
+				array(
+					"link" => "item4-1 link", 
+					"title" => "item4-1", 
+					"children" => array()
+				),
+			)
 		),
 		array(
 			"link" => "item5 link",
