@@ -1,0 +1,1179 @@
+/* --- Set direction for better styling --- */
+body{
+    margin: 0;
+}
+*, *:after, *:before{
+    box-sizing: border-box;
+}
+nav.rtl{
+    direction: rtl;
+}
+nav.ltr{
+    direction: ltr;
+}
+
+/* --- END --- */
+/* --- Public styling --- */
+nav#simple_menu{
+    padding: 0;
+    min-height: 40px;
+}
+.simple-menu ul li{
+    position: relative;
+}
+.simple-menu ul li a{
+    text-decoration: none;
+}
+.simple-menu>ul>li>a{
+    padding: 14px 5px;
+}
+.simple-menu ul li a{
+    color: #000;
+}
+.simple-menu ul{
+    list-style-type: none;
+    padding: 0;
+    margin: auto;
+}
+.simple-menu ul.menu-item li>a{
+    padding: 5px 0 5px 14px;
+    display: block;
+}
+.simple-menu>ul>li {
+    display: inline-block;
+}
+.simple-menu .sub-menu, .sub-menu .sub-menu2 {
+    border-radius: 0 0 2px 2px !important;
+    -webkit-border-radius: 0 0 2px 2px !important;
+    -moz-border-radius: 0 0 2px 2px !important;
+    -o-border-radius: 0 0 2px 2px !important;
+    min-width: 150px;
+    /*display: none;*/
+    position: absolute;
+}
+.simple-menu .sub-menu{
+    background-color: transparent;
+}
+.simple-menu .sub-menu2{
+    background-color: transparent;
+    padding-left: 2px;
+}
+/* --- --- RTL Styling --- --- */
+.rtl.simple-menu ul.menu-item li>a{
+    padding: 5px 14px 5px 0;
+    display: block;
+}
+.rtl.simple-menu .sub-menu2{
+    padding-left: 0;
+    padding-right: 2px;
+}
+
+/* --- --- END --- --- */
+
+/* --- END --- */
+/* --- Hover Styling --- */
+.sub-menu .sub-menu2{
+    left: 100%;
+    top: 0;
+}
+
+.simple-menu ul li a:link, .simple-menu ul li a:visited, .simple-menu ul li a:active, .simple-menu ul li a:hover{
+    color: #000;
+    text-decoration: none;
+}
+/* --- SUBMENU ARROW SIGN --- */
+.arrow .ar.ar-down{
+    position: relative;
+    top: -3px;
+    display: inline-block;
+    transform: rotateX(180deg);
+    -webkit-transform: rotateX(180deg);
+    -ms-transform: rotateX(180deg);
+    -o-transform: rotateX(180deg);
+}
+.arrow .ar.ar-right, .arrow .ar.ar-left{
+    position: absolute;
+    right: 10px;
+}
+.arrow .ar.ar-right{
+    display: inline-block;
+    transform: rotateZ(90deg);
+    -webkit-transform: rotateZ(90deg);
+    -ms-transform: rotateZ(90deg);
+    -o-transform: rotateZ(90deg);
+}
+.arrow .ar.ar-left{
+    display: none;
+    transform: rotateZ(-90deg);
+    -webkit-transform: rotateZ(-90deg);
+    -ms-transform: rotateZ(-90deg);
+    -o-transform: rotateZ(-90deg);
+}
+.arrow .parent .ar.ar-down{
+    display: none;
+}
+/* agar alamate submenu border bashad, arrow ha bayad mmakhfi shavad. */
+.border .ar.ar-down, .border .ar.ar-right, .border .ar.ar-left{
+    display: none;
+}
+
+/* --- RTL arrown sign --- */
+.rtl.arrow .ar.ar-left{
+    right: auto;
+    left: 10px;
+}
+.rtl.arrow .ar.ar-left{
+    display: inline-block;
+}
+.rtl.arrow .ar.ar-right{
+    display: none;
+}
+
+/* --- END --- */
+
+/* --- DESKTOP SIZE --- */
+
+@media (min-width: 640px){
+    /* --- SEPARATOR --- */
+    .separator ul#menu_container > li::after{
+        content: "|";
+    }
+    .separator ul#menu_container > li:last-child::after{
+        content: '';
+    }
+    .dark.separator ul#menu_container > li::after{
+        color: #fff;
+    }
+    .light.separator ul#menu_container > li::after{
+        color: #000;
+    }
+    /* jahate gharar gereftane sahihe separator, link ha bayad inline-block shavand va agar block bashand, separatorha be khate bad
+        miravand. hal agar link ha inline-block shavand, dar size mobile, hover ruye anha dorost nakhahad bud, banabarin dar size mobile
+        bayad block shavand.
+    */
+    .simple-menu>ul>li>a{
+        display: inline-block;
+    }
+    /* --- END --- */
+    /* jahate namayesh behtare border baraye zir menu ha, meghdari link ha ra be rast ya chap montaghel mikonim */
+    .ltr.border ul>li ul li>a.link{
+        margin-left: 2px;
+    }
+    .rtl.border ul>li ul li>a.link{
+        margin-right: 2px;
+    }
+    /* adame namayeshe dokmeye toggle menu */
+    .menu-toggle{
+        display: none;
+    }
+    .rtl ul#menu_container{
+        padding-right: 14px;
+    }
+    .ltr ul#menu_container{
+        padding-left: 14px;
+    }
+    .sub-menu, .sub-menu2{
+        padding-top: 2px;
+    }
+    /* dar halate hover va click ebyeda bayad menuhaye asli makhfi bashand va kami paeein tar ta bad az hover ya click be bala biayad
+        (be surate slide) va namayesh dahad.
+    */
+    ul.hover .sub-menu, ul.hover .sub-menu2, ul.click .sub-menu, ul.click .sub-menu2 {
+        visibility: hidden;
+        opacity: 0;
+        top: 160%;
+    }
+    /* dar halate fade, menu ha dar haman jaye khod baghi mimanand. */
+    .fade .sub-menu{
+        top: 100% !important;
+    }
+    .fade .sub-menu2{
+        left: 100% !important;
+    }
+    /* handel kardane halate slide va fade */
+    ul.slide .sub-menu, ul.slide .sub-menu2, ul.fade .sub-menu, ul.fade .sub-menu2 {
+        transition: all 0.4s ease;
+        -webkit-transition: all 0.4s ease;
+    }
+    /* dar ebteda zir menuye dakheli */
+    ul.hover .sub-menu2, ul.click .sub-menu2{
+        top: 0;
+        left: 60%;
+    }
+    /* namayesh dar halate hover va namayeshe zir menuye dakheli */
+    ul.hover .sub-menu ul li:hover > .sub-menu2 {
+        /*position: absolute;*/
+        top: 0%;
+        left: 100%;
+        opacity: 1;
+        visibility: visible;
+    }
+    /* namayeshe dar halate hover va namayeshe zir menu */
+    ul.hover li:hover > .sub-menu {
+        /*position: absolute;*/
+        opacity: 1;
+        top: 100%;
+        visibility: visible;
+    }
+    /* namayeshe dar halate click va bad az active kardane li, zir menu namayesh dade shavad*/
+    ul.click li.parent-item.active > .sub-menu {
+        /*position: absolute;*/
+        opacity: 1;
+        top: 100%;
+        visibility: visible;
+    }
+    /* namayesh dar halate clicke menuye asli va bad az active kardane an, hover ruye menu item ha va zir menuye dahkeli namayesh dade shavad */
+    ul.click .sub-menu ul li.parent-item.active > .sub-menu2, ul.click .sub-menu ul li.parent:hover > .sub-menu2  {
+        /*position: absolute;*/
+        top: 0%;
+        left: 100%;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* --- SUNMENU BORDER SIGN --- */
+    .border li.parent-item>a.link {
+        border-bottom: 3px solid;
+    }
+    .ltr.border li.parent>a.link{
+        border-left: 3px solid;
+    }
+    /* RTL border sign */
+    .rtl.border li.parent>a.link{
+        border-right: 3px solid;
+    }
+    /* linkhaye menu be andazeye border paein menu bayad be bala harekat konand ta li menu paein keshide nashavad. */
+    /* --- END --- */
+
+    /*!* --- --- RTL Styling --- --- *!*/
+    .rtl .sub-menu .sub-menu2{
+        left: auto !important;
+        right: 60% !important;
+        top: 0% !important;
+    }
+    .rtl .fade .sub-menu .sub-menu2{
+        right: 100% !important;
+    }
+    .rtl ul .sub-menu ul li:hover > .sub-menu2 {
+        right: 100% !important;
+    }
+    /* --- --- END --- --- */
+}
+/* --- END --- */
+
+/* --- Themes --- */
+/* Dark */
+nav.dark{
+    background-color: #333 !important;
+}
+nav.dark a{
+    color: #fff !important;
+}
+nav.dark ul.menu-item, nav.dark ul.menu-item2 {
+    background-color: #333 !important;
+    border-radius: 0 0 2px 2px !important;
+    -webkit-border-radius: 0 0 2px 2px !important;
+    -moz-border-radius: 0 0 2px 2px !important;
+    -o-border-radius: 0 0 2px 2px !important;
+}
+.dark .arrow .ar.ar-down {
+    color: #fff;
+}
+.dark li>a.link:hover, .dark #menu_container>li.active{
+    background-color: #555;
+}
+.dark ul#menu_container > li.active{
+    background-color: #888;
+}
+.dark.border li>a.link{
+    border-color: #fff;
+}
+/* Light */
+nav.light{
+    background-color: #bbb !important;
+}
+nav.light a{
+    color: #000 !important;
+}
+nav.light ul.menu-item, nav.light ul.menu-item2 {
+    background-color: #bbb !important;
+    border-radius: 0 0 2px 2px !important;
+    -webkit-border-radius: 0 0 2px 2px !important;
+    -moz-border-radius: 0 0 2px 2px !important;
+    -o-border-radius: 0 0 2px 2px !important;
+}
+.light .arrow .ar.ar-down {
+    color: #000;
+}
+.light li>a.link:hover, .light #menu_container>li.active{
+    background-color: #888;
+}
+.light.border li>a.link{
+    border-color: #000;
+}
+
+/* --- END --- */
+
+/* --- Other Size --- */
+
+@media (max-width : 640px){
+    /* jahate hvoer dorost bayad block shavand */
+    .simple-menu>ul>li>a{
+        display: block;
+    }
+    /* jahate namayeshe behtare border dar menuhaei ke daraye zir menu hastand, meghdari menuha ra be rast ya chap harekat midahim */
+    .border.ltr ul#menu_container{
+        padding-left: 5px;
+    }
+    .border.rtl ul#menu_container{
+        padding-right: 5px;
+    }
+    .border ul#menu_container{
+        padding-top: 5px;
+    }
+    /* --- PUBLIC STYLING --- */
+    li.parent, li.parent-item{
+        padding-bottom: 0 !important;
+    }
+    .ltr .menu-item, .ltr .menu-item2 {
+        padding-left: 8px;
+    }
+    .rtl .menu-item, .rtl .menu-item2{
+        padding-right: 8px;
+    }
+    /* border paein sefid shavad */
+    li.active .sub-menu,li.active .sub-menu2{
+        border-bottom: 1px solid #fff;
+    }
+    nav#simple_menu{
+        -webkit-border-radius: 0 !important;
+        -moz-border-radius: 0 !important;
+        border-radius: 0 !important;
+        min-height: 50px;
+    }
+    ul#menu_container{
+        display: none; /* dar ebtedaye vorud be size mobile, menu container bayad makhfi bashad */
+        position: absolute;
+        width: auto;
+        top: 50px;
+        border-top: 1px solid white;
+        left: 0;
+        right: 0;
+    }
+    ul#menu_container li{
+        display: block;
+    }
+    .arrow .ar.ar-left, .arrow .ar.ar-right{
+        display: none !important;
+    }
+    .arrow .parent .ar.ar-down{
+        display: inline-block;
+    }
+    /* --- END --- */
+
+    /* --- SHOWING MENU STYLING --- */
+    /* che dar halate slide va che dar halate gheire an, in style bayad emal shavad */
+    ul .sub-menu, ul .sub-menu2 {
+        position: static !important;
+        visibility: initial;
+        /*height: 0 !important;*/
+        overflow: hidden;
+        max-height: 0;
+        /*display: none !important;*/
+    }
+    /* faghat dar halate slide va halate fade*/
+    ul.slide .sub-menu, ul.slide .sub-menu2, ul.fade .sub-menu, ul.fade .sub-menu2{
+        -webkit-transition: max-height 0.5s !important;
+        -moz-transition: max-height 0.5s !important;
+        -ms-transition: max-height 0.5s !important;
+        -o-transition: max-height 0.5s !important;
+        transition: max-height 0.5s !important;
+    }
+    /* faghat dar halate fade */
+    ul.fade .sub-menu .menu-item, ul.fade .sub-menu2 .menu-item2{
+        -webkit-transition: opacity 0.5s !important;
+        -moz-transition: opacity 0.5s !important;
+        -ms-transition: opacity 0.5s !important;
+        -o-transition: opacity 0.5s !important;
+        transition: opacity 0.5s !important;
+    }
+    /* dar ebteda gozibehaye menu namayesh dade nashavad */
+    ul.fade .sub-menu .menu-item, ul.fade .sub-menu2 .menu-item2{
+        opacity: 0;
+    }
+    /* bad az click ruye menu, transition opacity emal shavad */
+    .click.fade .sub-menu .menu-item, .click.fade .sub-menu2 .menu-item2{
+        -webkit-transition: opacity 1s linear 0.4s !important;
+        -moz-transition: opacity 1s linear 0.4s !important;
+        -ms-transition: opacity 1s linear 0.4s !important;
+        -o-transition: opacity 1s linear 0.4s !important;
+        transition: opacity 1s linear 0.4s !important;
+    }
+    /* namayeshe menu ha besurat fade (ba tavajoh be transition opacity ghabli) */
+    .click.fade li.active .sub-menu .menu-item, .click.fade li.active .sub-menu2 .menu-item2{
+        opacity: 1 !important;
+    }
+    /* makhfi kardane menu ha besurat fade (ba tavajoh be transition opacity ghabli) */
+    .click.fade li.inactive .sub-menu .menu-item, .click.fade li.inactive .sub-menu2 .menu-item2{
+        opacity: 0 !important;
+    }
+
+
+    /* ba vojude nabude halate hover dar size mobile, in ghesmat (block) tabih shode ast. START{ */
+    ul.slide.hover li:hover > .sub-menu {
+        max-height: 500px !important;
+        -webkit-transition: max-height 1.5s linear 0.1s !important;
+        -moz-transition: max-height 1.5s linear 0.1s !important;
+        -ms-transition: max-height 1.5s linear 0.1s !important;
+        -o-transition: max-height 1.5s linear 0.1s !important;
+        transition: max-height 1.5s linear 0.1s !important;
+        opacity: 1 !important;
+    }
+    ul.slide.hover .sub-menu ul li:hover > .sub-menu2{
+        max-height: 500px !important;
+        -webkit-transition: max-height 1.5s linear 0.1s !important;
+        -moz-transition: max-height 1.5s linear 0.1s !important;
+        -ms-transition: max-height 1.5s linear 0.1s !important;
+        -o-transition: max-height 1.5s linear 0.1s !important;
+        transition: max-height 1.5s linear 0.1s !important;
+        opacity: 1 !important;
+    }
+    /* }END */
+
+    /* click ruye menu va faal kardan (ham dar halate slide va ham fade) */
+    .click.slide li.active > .sub-menu, .click.slide .sub-menu ul li.active > .sub-menu2,
+    .click.fade li.active > .sub-menu, .click.fade .sub-menu ul li.active > .sub-menu2 {
+        -webkit-transition: max-height 1.5s linear 0.1s !important;
+        -moz-transition: max-height 1.5s linear 0.1s !important;
+        -ms-transition: max-height 1.5s linear 0.1s !important;
+        -o-transition: max-height 1.5s linear 0.1s !important;
+        transition: max-height 1.5s linear 0.1s !important;
+    }
+    .click li.active > .sub-menu, .click .sub-menu ul li.active > .sub-menu2{
+        max-height: 500px !important;
+        opacity: 1 !important;
+    }
+    /* click ruye menu va gheire faal kardan (ham dar halate slide va none)*/
+    .click li.inactive > .sub-menu, .click .sub-menu ul li.inactive > .sub-menu2{
+        max-height: 0px !important;
+        opacity: 0 !important;
+    }
+    /* --- END --- */
+
+    /* --- RTL STYLING --- */
+    .ltr.simple-menu ul>li>a{
+        padding-left: 14px !important;
+    }
+    .rtl.simple-menu ul>li>a{
+        padding-right: 14px !important;
+    }
+    .ltr.simple-menu ul.menu-item li, .sub-menu2{
+        padding-left: 0 !important;
+    }
+    .rtl.simple-menu ul.menu-item li{
+        padding-right: 0;
+    }
+    /* --- END --- */
+
+    /* --- MENU TOGGLE --- */
+    .menu-toggle{
+        border-radius: 3px;
+        text-align: center;
+        display: inline-block;
+        cursor: pointer;
+        margin-left: 14px;
+        margin-top: 6px;
+        padding: 3px;
+        border: 1.5px solid #666
+    }
+    .rtl .menu-toggle{
+        margin-left: 0;
+        margin-right: 14px;
+    }
+    .bar1, .bar2, .bar3 {
+        width: 35px;
+        height: 3px;
+        margin: 5px 0;
+        transition: 0.4s;
+    }
+    .bar1, .bar2, .bar3{
+        background-color: #666;
+    }
+    .menu-bars + .menu-bars{
+        margin-top: 4px !important;
+    }
+    /* Rotate first bar */
+    .change .bar1 {
+        -webkit-transform: rotate(-45deg) translate(-5px, 6px) ;
+        transform: rotate(-45deg) translate(-5px, 6px) ;
+    }
+
+    /* Fade out the second bar */
+    .change .bar2 {
+        opacity: 0;
+    }
+
+    /* Rotate last bar */
+    .change .bar3 {
+        -webkit-transform: rotate(45deg) translate(-5px, -6px) ;
+        transform: rotate(45deg) translate(-5px, -6px) ;
+    }
+    /* --- END --- */
+
+    /* --- SUBMENU BORDER SIGN --- */
+    .ltr.border li.parent-item>a.link, .ltr.border li.parent>a.link{
+        border-left: 3px solid;
+    }
+    /* RTL border sign */
+    .rtl.border li.parent-item>a.link, .rtl.border li.parent>a.link{
+        border-right: 3px solid;
+    }
+    /* --- END --- */
+    /* --- THEMES --- */
+    /* Dark */
+    .dark .menu-toggle {
+        background-color: #333;
+    }
+    .dark ul#menu_container{
+        background: #333;
+    }
+    nav.dark ul.menu-item{
+        background-color: #666 !important;
+    }
+    .dark li:hover > .sub-menu, .dark .sub-menu ul li:hover > .sub-menu2{
+        /*border-bottom: 1px solid #fff;*/
+    }
+    /* Light */
+    nav.light ul.menu-item{
+        background-color: #aaa !important;
+    }
+    .light ul#menu_container{
+        background: #bbb;
+    }
+    .light li:hover > .sub-menu, .light .sub-menu ul li:hover > .sub-menu2{
+        /*border-bottom: 1px solid #fff;*/
+    }
+    /* --- END --- */
+}
+
+/* --- END --- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- Set direction for better styling --- */
+body{
+    margin: 0;
+}
+*, *:after, *:before{
+    box-sizing: border-box;
+}
+nav.rtl{
+    direction: rtl;
+}
+nav.ltr{
+    direction: ltr;
+}
+
+/* --- END --- */
+/* --- Public styling --- */
+nav#simple_menu{
+    padding: 0;
+    min-height: 40px;
+}
+.simple-menu ul li{
+    position: relative;
+}
+.simple-menu ul li a{
+    text-decoration: none;
+}
+.simple-menu>ul>li>a{
+    padding: 14px 5px;
+}
+.simple-menu ul li a{
+    color: #000;
+}
+.simple-menu ul{
+    list-style-type: none;
+    padding: 0;
+    margin: auto;
+}
+.simple-menu ul.menu-item li>a{
+    padding: 5px 0 5px 14px;
+    display: block;
+}
+.simple-menu>ul>li {
+    display: inline-block;
+}
+.simple-menu .sub-menu {
+    border-radius: 0 0 2px 2px !important;
+    -webkit-border-radius: 0 0 2px 2px !important;
+    -moz-border-radius: 0 0 2px 2px !important;
+    -o-border-radius: 0 0 2px 2px !important;
+    min-width: 150px;
+    /*display: none;*/
+    position: absolute;
+}
+.simple-menu .sub-menu{
+    background-color: transparent;
+}
+/*.simple-menu .sub-menu2{*/
+.simple-menu ul.main-container > li .sub-menu .sub-menu{
+    background-color: transparent;
+    padding-left: 2px;
+}
+/* --- --- RTL Styling --- --- */
+.rtl.simple-menu ul.menu-item li>a{
+    padding: 5px 14px 5px 0;
+    display: block;
+}
+/*.rtl.simple-menu .sub-menu2{*/
+.rtl.simple-menu ul.main-container > li .sub-menu .sub-menu{
+    padding-left: 0;
+    padding-right: 2px;
+}
+
+/* --- --- END --- --- */
+
+/* --- END --- */
+/* --- Hover Styling --- */
+/*.sub-menu .sub-menu2{*/
+ul.main-container > li .sub-menu .sub-menu{
+    left: 100%;
+    top: 0;
+}
+
+.simple-menu ul li a:link, .simple-menu ul li a:visited, .simple-menu ul li a:active, .simple-menu ul li a:hover{
+    color: #000;
+    text-decoration: none;
+}
+/* --- SUBMENU ARROW SIGN --- */
+.arrow .ar.ar-down{
+    position: relative;
+    top: -3px;
+    display: inline-block;
+    transform: rotateX(180deg);
+    -webkit-transform: rotateX(180deg);
+    -ms-transform: rotateX(180deg);
+    -o-transform: rotateX(180deg);
+}
+.arrow .ar.ar-right, .arrow .ar.ar-left{
+    position: absolute;
+    right: 10px;
+}
+.arrow .ar.ar-right{
+    display: inline-block;
+    transform: rotateZ(90deg);
+    -webkit-transform: rotateZ(90deg);
+    -ms-transform: rotateZ(90deg);
+    -o-transform: rotateZ(90deg);
+}
+.arrow .ar.ar-left{
+    display: none;
+    transform: rotateZ(-90deg);
+    -webkit-transform: rotateZ(-90deg);
+    -ms-transform: rotateZ(-90deg);
+    -o-transform: rotateZ(-90deg);
+}
+.arrow .parent .ar.ar-down{
+    display: none;
+}
+/* agar alamate submenu border bashad, arrow ha bayad mmakhfi shavad. */
+.border .ar.ar-down, .border .ar.ar-right, .border .ar.ar-left{
+    display: none;
+}
+
+/* --- RTL arrown sign --- */
+.rtl.arrow .ar.ar-left{
+    right: auto;
+    left: 10px;
+}
+.rtl.arrow .ar.ar-left{
+    display: inline-block;
+}
+.rtl.arrow .ar.ar-right{
+    display: none;
+}
+
+/* --- END --- */
+
+/* --- DESKTOP SIZE --- */
+
+@media (min-width: 640px){
+    /* --- SEPARATOR --- */
+    .separator ul#menu_container > li::after{
+        content: "|";
+    }
+    .separator ul#menu_container > li:last-child::after{
+        content: '';
+    }
+    .dark.separator ul#menu_container > li::after{
+        color: #fff;
+    }
+    .light.separator ul#menu_container > li::after{
+        color: #000;
+    }
+    /* jahate gharar gereftane sahihe separator, link ha bayad inline-block shavand va agar block bashand, separatorha be khate bad
+        miravand. hal agar link ha inline-block shavand, dar size mobile, hover ruye anha dorost nakhahad bud, banabarin dar size mobile
+        bayad block shavand.
+    */
+    .simple-menu>ul>li>a{
+        display: inline-block;
+    }
+    /* --- END --- */
+    /* jahate namayesh behtare border baraye zir menu ha, meghdari link ha ra be rast ya chap montaghel mikonim */
+    .ltr.border ul>li ul li>a.link{
+        margin-left: 2px;
+    }
+    .rtl.border ul>li ul li>a.link{
+        margin-right: 2px;
+    }
+    /* adame namayeshe dokmeye toggle menu */
+    .menu-toggle{
+        display: none;
+    }
+    .rtl ul#menu_container{
+        padding-right: 14px;
+    }
+    .ltr ul#menu_container{
+        padding-left: 14px;
+    }
+    /*.sub-menu, .sub-menu2{*/
+    .sub-menu{
+        padding-top: 2px;
+    }
+    /* dar halate hover va click ebyeda bayad menuhaye asli makhfi bashand va kami paeein tar ta bad az hover ya click be bala biayad
+        (be surate slide) va namayesh dahad.
+    */
+    /*ul.hover .sub-menu, ul.hover .sub-menu2, ul.click .sub-menu, ul.click .sub-menu2 {*/
+    ul.hover .sub-menu, ul.click .sub-menu{
+        visibility: hidden;
+        opacity: 0;
+        top: 160%;
+    }
+    /* dar halate fade, menu ha dar haman jaye khod baghi mimanand. */
+    /*.fade .sub-menu{*/
+    .fade > li > .sub-menu{
+        top: 100% !important;
+    }
+    /*.fade .sub-menu2{*/
+    .fade > li .sub-menu .sub-menu{
+        left: 100% !important;
+    }
+    /* handel kardane halate slide va fade */
+    /*ul.slide .sub-menu, ul.slide .sub-menu2, ul.fade .sub-menu, ul.fade .sub-menu2 {*/
+    ul.slide .sub-menu, ul.fade .sub-menu{
+        transition: all 0.4s ease;
+        -webkit-transition: all 0.4s ease;
+    }
+    /* dar ebteda zir menuye dakheli */
+    /*ul.hover .sub-menu2, ul.click .sub-menu2{*/
+    ul.hover > li .sub-menu .sub-menu, ul.click > li .sub-menu .sub-menu{
+        top: 0;
+        left: 60%;
+    }
+    /* namayesh dar halate hover va namayeshe zir menuye dakheli */
+    /*ul.hover .sub-menu ul li:hover > .sub-menu2 {*/
+    ul.hover .sub-menu ul li:hover > .sub-menu {
+        /*position: absolute;*/
+        top: 0%;
+        left: 100%;
+        opacity: 1;
+        visibility: visible;
+    }
+    /* namayeshe dar halate hover va namayeshe zir menu */
+    ul.hover li:hover > .sub-menu {
+        /*position: absolute;*/
+        opacity: 1;
+        top: 100%;
+        visibility: visible;
+    }
+    /* namayeshe dar halate click va bad az active kardane li, zir menu namayesh dade shavad*/
+    /*ul.click > li.parent-item.active > .sub-menu {*/
+    ul.click > li.parent.active > .sub-menu {
+        /*position: absolute;*/
+        opacity: 1;
+        top: 100%;
+        visibility: visible;
+    }
+    /* namayesh dar halate clicke menuye asli va bad az active kardane an, hover ruye menu item ha va zir menuye dahkeli namayesh dade shavad */
+    /*ul.click > li.parent-item.active > .sub-menu2, ul.click .sub-menu ul li.parent:hover > .sub-menu2{*/
+    ul.click > li.parent.active > .sub-menu, ul.click .sub-menu ul li.parent:hover > .sub-menu{
+        /*position: absolute;*/
+        top: 0%;
+        left: 100%;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* --- SUNMENU BORDER SIGN --- */
+    /*.border li.parent-item>a.link {*/
+    .border ul.main-container li.parent>a.link {
+        border-bottom: 3px solid;
+    }
+    .ltr.border ul.main-container li ul li.parent>a.link{
+        border-left: 3px solid;
+    }
+    /* RTL border sign */
+    .rtl.border ul.main-container li ul li.parent>a.link{
+        border-right: 3px solid;
+    }
+    /* linkhaye menu be andazeye border paein menu bayad be bala harekat konand ta li menu paein keshide nashavad. */
+    /* --- END --- */
+
+    /*!* --- --- RTL Styling --- --- *!*/
+    .rtl .sub-menu .sub-menu2{
+        left: auto !important;
+        right: 60% !important;
+        top: 0% !important;
+    }
+    .rtl .fade .sub-menu .sub-menu2{
+        right: 100% !important;
+    }
+    .rtl ul .sub-menu ul li:hover > .sub-menu2 {
+        right: 100% !important;
+    }
+    /* --- --- END --- --- */
+}
+/* --- END --- */
+
+/* --- Themes --- */
+/* Dark */
+nav.dark{
+    background-color: #333 !important;
+}
+nav.dark a{
+    color: #fff !important;
+}
+nav.dark ul.menu-item, nav.dark ul.menu-item2 {
+    background-color: #333 !important;
+    border-radius: 0 0 2px 2px !important;
+    -webkit-border-radius: 0 0 2px 2px !important;
+    -moz-border-radius: 0 0 2px 2px !important;
+    -o-border-radius: 0 0 2px 2px !important;
+}
+.dark .arrow .ar.ar-down {
+    color: #fff;
+}
+.dark li>a.link:hover, .dark #menu_container>li.active{
+    background-color: #555;
+}
+.dark ul#menu_container > li.active{
+    background-color: #888;
+}
+.dark.border li>a.link{
+    border-color: #fff;
+}
+/* Light */
+nav.light{
+    background-color: #bbb !important;
+}
+nav.light a{
+    color: #000 !important;
+}
+nav.light ul.menu-item, nav.light ul.menu-item2 {
+    background-color: #bbb !important;
+    border-radius: 0 0 2px 2px !important;
+    -webkit-border-radius: 0 0 2px 2px !important;
+    -moz-border-radius: 0 0 2px 2px !important;
+    -o-border-radius: 0 0 2px 2px !important;
+}
+.light .arrow .ar.ar-down {
+    color: #000;
+}
+.light li>a.link:hover, .light #menu_container>li.active{
+    background-color: #888;
+}
+.light.border li>a.link{
+    border-color: #000;
+}
+
+/* --- END --- */
+
+/* --- Other Size --- */
+
+@media (max-width : 640px){
+    /* jahate hvoer dorost bayad block shavand */
+    .simple-menu>ul>li>a{
+        display: block;
+    }
+    /* jahate namayeshe behtare border dar menuhaei ke daraye zir menu hastand, meghdari menuha ra be rast ya chap harekat midahim */
+    .border.ltr ul#menu_container{
+        padding-left: 5px;
+    }
+    .border.rtl ul#menu_container{
+        padding-right: 5px;
+    }
+    .border ul#menu_container{
+        padding-top: 5px;
+    }
+    /* --- PUBLIC STYLING --- */
+    li.parent{
+        padding-bottom: 0 !important;
+    }
+    .ltr .menu-item, .ltr .menu-item2 {
+        padding-left: 8px;
+    }
+    .rtl .menu-item, .rtl .menu-item2{
+        padding-right: 8px;
+    }
+    /* border paein sefid shavad */
+    li.active .sub-menu,li.active .sub-menu2{
+        border-bottom: 1px solid #fff;
+    }
+    nav#simple_menu{
+        -webkit-border-radius: 0 !important;
+        -moz-border-radius: 0 !important;
+        border-radius: 0 !important;
+        min-height: 50px;
+    }
+    ul#menu_container{
+        display: none; /* dar ebtedaye vorud be size mobile, menu container bayad makhfi bashad */
+        position: absolute;
+        width: auto;
+        top: 50px;
+        border-top: 1px solid white;
+        left: 0;
+        right: 0;
+    }
+    ul#menu_container li{
+        display: block;
+    }
+    .arrow .ar.ar-left, .arrow .ar.ar-right{
+        display: none !important;
+    }
+    .arrow .parent .ar.ar-down{
+        display: inline-block;
+    }
+    /* --- END --- */
+
+    /* --- SHOWING MENU STYLING --- */
+    /* che dar halate slide va che dar halate gheire an, in style bayad emal shavad */
+    ul .sub-menu, ul .sub-menu2 {
+        position: static !important;
+        visibility: initial;
+        /*height: 0 !important;*/
+        overflow: hidden;
+        max-height: 0;
+        /*display: none !important;*/
+    }
+    /* faghat dar halate slide va halate fade*/
+    ul.slide .sub-menu, ul.slide .sub-menu2, ul.fade .sub-menu, ul.fade .sub-menu2{
+        -webkit-transition: max-height 0.5s !important;
+        -moz-transition: max-height 0.5s !important;
+        -ms-transition: max-height 0.5s !important;
+        -o-transition: max-height 0.5s !important;
+        transition: max-height 0.5s !important;
+    }
+    /* faghat dar halate fade */
+    ul.fade .sub-menu .menu-item, ul.fade .sub-menu2 .menu-item2{
+        -webkit-transition: opacity 0.5s !important;
+        -moz-transition: opacity 0.5s !important;
+        -ms-transition: opacity 0.5s !important;
+        -o-transition: opacity 0.5s !important;
+        transition: opacity 0.5s !important;
+    }
+    /* dar ebteda gozibehaye menu namayesh dade nashavad */
+    ul.fade .sub-menu .menu-item, ul.fade .sub-menu2 .menu-item2{
+        opacity: 0;
+    }
+    /* bad az click ruye menu, transition opacity emal shavad */
+    .click.fade .sub-menu .menu-item, .click.fade .sub-menu2 .menu-item2{
+        -webkit-transition: opacity 1s linear 0.4s !important;
+        -moz-transition: opacity 1s linear 0.4s !important;
+        -ms-transition: opacity 1s linear 0.4s !important;
+        -o-transition: opacity 1s linear 0.4s !important;
+        transition: opacity 1s linear 0.4s !important;
+    }
+    /* namayeshe menu ha besurat fade (ba tavajoh be transition opacity ghabli) */
+    .click.fade li.active .sub-menu .menu-item, .click.fade li.active .sub-menu2 .menu-item2{
+        opacity: 1 !important;
+    }
+    /* makhfi kardane menu ha besurat fade (ba tavajoh be transition opacity ghabli) */
+    .click.fade li.inactive .sub-menu .menu-item, .click.fade li.inactive .sub-menu2 .menu-item2{
+        opacity: 0 !important;
+    }
+
+
+    /* ba vojude nabude halate hover dar size mobile, in ghesmat (block) tabih shode ast. START{ */
+    ul.slide.hover li:hover > .sub-menu {
+        max-height: 500px !important;
+        -webkit-transition: max-height 1.5s linear 0.1s !important;
+        -moz-transition: max-height 1.5s linear 0.1s !important;
+        -ms-transition: max-height 1.5s linear 0.1s !important;
+        -o-transition: max-height 1.5s linear 0.1s !important;
+        transition: max-height 1.5s linear 0.1s !important;
+        opacity: 1 !important;
+    }
+    ul.slide.hover .sub-menu ul li:hover > .sub-menu2{
+        max-height: 500px !important;
+        -webkit-transition: max-height 1.5s linear 0.1s !important;
+        -moz-transition: max-height 1.5s linear 0.1s !important;
+        -ms-transition: max-height 1.5s linear 0.1s !important;
+        -o-transition: max-height 1.5s linear 0.1s !important;
+        transition: max-height 1.5s linear 0.1s !important;
+        opacity: 1 !important;
+    }
+    /* }END */
+
+    /* click ruye menu va faal kardan (ham dar halate slide va ham fade) */
+    .click.slide li.active > .sub-menu, .click.slide .sub-menu ul li.active > .sub-menu2,
+    .click.fade li.active > .sub-menu, .click.fade .sub-menu ul li.active > .sub-menu2 {
+        -webkit-transition: max-height 1.5s linear 0.1s !important;
+        -moz-transition: max-height 1.5s linear 0.1s !important;
+        -ms-transition: max-height 1.5s linear 0.1s !important;
+        -o-transition: max-height 1.5s linear 0.1s !important;
+        transition: max-height 1.5s linear 0.1s !important;
+    }
+    .click li.active > .sub-menu, .click .sub-menu ul li.active > .sub-menu2{
+        max-height: 500px !important;
+        opacity: 1 !important;
+    }
+    /* click ruye menu va gheire faal kardan (ham dar halate slide va none)*/
+    .click li.inactive > .sub-menu, .click .sub-menu ul li.inactive > .sub-menu2{
+        max-height: 0px !important;
+        opacity: 0 !important;
+    }
+    /* --- END --- */
+
+    /* --- RTL STYLING --- */
+    .ltr.simple-menu ul>li>a{
+        padding-left: 14px !important;
+    }
+    .rtl.simple-menu ul>li>a{
+        padding-right: 14px !important;
+    }
+    .ltr.simple-menu ul.menu-item li, .sub-menu2{
+        padding-left: 0 !important;
+    }
+    .rtl.simple-menu ul.menu-item li{
+        padding-right: 0;
+    }
+    /* --- END --- */
+
+    /* --- MENU TOGGLE --- */
+    .menu-toggle{
+        border-radius: 3px;
+        text-align: center;
+        display: inline-block;
+        cursor: pointer;
+        margin-left: 14px;
+        margin-top: 6px;
+        padding: 3px;
+        border: 1.5px solid #666
+    }
+    .rtl .menu-toggle{
+        margin-left: 0;
+        margin-right: 14px;
+    }
+    .bar1, .bar2, .bar3 {
+        width: 35px;
+        height: 3px;
+        margin: 5px 0;
+        transition: 0.4s;
+    }
+    .bar1, .bar2, .bar3{
+        background-color: #666;
+    }
+    .menu-bars + .menu-bars{
+        margin-top: 4px !important;
+    }
+    /* Rotate first bar */
+    .change .bar1 {
+        -webkit-transform: rotate(-45deg) translate(-5px, 6px) ;
+        transform: rotate(-45deg) translate(-5px, 6px) ;
+    }
+
+    /* Fade out the second bar */
+    .change .bar2 {
+        opacity: 0;
+    }
+
+    /* Rotate last bar */
+    .change .bar3 {
+        -webkit-transform: rotate(45deg) translate(-5px, -6px) ;
+        transform: rotate(45deg) translate(-5px, -6px) ;
+    }
+    /* --- END --- */
+
+    /* --- SUBMENU BORDER SIGN --- */
+    /*.ltr.border li.parent-item>a.link, .ltr.border li.parent>a.link{*/
+    .ltr.border li.parent>a.link{
+        border-left: 3px solid;
+    }
+    /* RTL border sign */
+    /*.rtl.border li.parent-item>a.link, .rtl.border li.parent>a.link{*/
+    .rtl.border li.parent>a.link{
+        border-right: 3px solid;
+    }
+    /* --- END --- */
+    /* --- THEMES --- */
+    /* Dark */
+    .dark .menu-toggle {
+        background-color: #333;
+    }
+    .dark ul#menu_container{
+        background: #333;
+    }
+    nav.dark ul.menu-item{
+        background-color: #666 !important;
+    }
+    .dark li:hover > .sub-menu, .dark .sub-menu ul li:hover > .sub-menu2{
+        /*border-bottom: 1px solid #fff;*/
+    }
+    /* Light */
+    nav.light ul.menu-item{
+        background-color: #aaa !important;
+    }
+    .light ul#menu_container{
+        background: #bbb;
+    }
+    .light li:hover > .sub-menu, .light .sub-menu ul li:hover > .sub-menu2{
+        /*border-bottom: 1px solid #fff;*/
+    }
+    /* --- END --- */
+}
+
+/* --- END --- */
